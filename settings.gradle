@@ -1,3 +1,4 @@
 rootProject.name = 'desmond'
 rootProject.name = 'desmond'
+include 'bank'
 
