@@ -17,7 +17,7 @@ class BancoDoBrasilGeneratorTest {
     @Test
     fun shouldReturnCorrectAgencyCheckDigitWhenSubtractionIsEleven() {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER_SUBTRACTION_ELEVEN
-        val validCheckDigit = objectFactory.VALID_AGENCY_CHECK_DIGIT_SUBTRACTION_ELEVEN
+        val validCheckDigit = objectFactory.VALID_CHECK_DIGIT_SUBTRACTION_ELEVEN
         generator.generateAgencyCheckDigit(validAgencyNumber).should.equal(validCheckDigit)
     }
 
@@ -45,7 +45,7 @@ class BancoDoBrasilGeneratorTest {
     @Test
     fun shouldReturnCorrectAccountCheckDigitWhenSubtractionIsEleven() {
         val validAgencyNumber = objectFactory.VALID_ACCOUNT_NUMBER_SUBTRACTION_ELEVEN
-        val validCheckDigit = objectFactory.VALID_AGENCY_CHECK_DIGIT_SUBTRACTION_ELEVEN
+        val validCheckDigit = objectFactory.VALID_CHECK_DIGIT_SUBTRACTION_ELEVEN
         generator.generateAccountCheckDigit(validAgencyNumber).should.equal(validCheckDigit)
     }
 

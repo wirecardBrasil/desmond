@@ -12,6 +12,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     testCompile group: 'junit', name: 'junit', version: jUnitVersion
     testCompile group: 'com.winterbe', name: 'expekt', version: expektVersion
+    testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-test'
 }
 
 compileKotlin {
