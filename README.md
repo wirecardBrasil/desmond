@@ -4,6 +4,7 @@
 2. How does it work?
 3. How to use it?
 4. How can I contribute?
+5. How can I report a bug or ask for a new feature?
 
 # 1. What is Desmond?
 Desmond is a Kotlin library to generate and verify check digits of multiple Brazilian services, such as bank account numbers.
@@ -16,4 +17,7 @@ The verification process first generates the digit based on the given informatio
 Coming soon.
 
 # 4. How can I contribute?
+Check [CONTRIBUTING.md](CONTRIBUTING.md)
+
+# 5. How can I report a bug or ask for a new feature?
 Coming soon.
