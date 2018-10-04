@@ -20,4 +20,6 @@ Coming soon.
 Check [CONTRIBUTING.md](CONTRIBUTING.md)
 
 # 5. How can I report a bug or ask for a new feature?
-Coming soon.
+To report a bug or ask for a new feature, open a new Issue. Make sure there is no Issue open for the bug you're reporting or the feature you're requesting.
+
+When opening a new Issue, fill in the Issue Template.
