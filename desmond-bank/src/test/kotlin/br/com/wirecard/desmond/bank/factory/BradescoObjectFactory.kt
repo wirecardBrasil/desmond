@@ -15,4 +15,9 @@ object BradescoObjectFactory {
 
     const val VALID_NUMBER_TWO_DIGITS = "31"
     const val VALID_CHECK_DIGIT_NUMBER_TWO_DIGITS = "0"
+
+    const val INVALID_LENGTH_AGENCY_NUMBER = "00000"
+    const val INVALID_LENGTH_ACCOUNT_NUMBER = "00000000"
+    const val INVALID_EMPTY_CHECK_DIGIT = ""
+    const val INVALID_CHECK_DIGIT = "2"
 }
