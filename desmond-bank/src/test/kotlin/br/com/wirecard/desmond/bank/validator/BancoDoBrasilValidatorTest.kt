@@ -5,7 +5,6 @@ import br.com.wirecard.desmond.bank.exception.InvalidCheckDigitException
 import br.com.wirecard.desmond.bank.exception.InvalidNumberLengthException
 import com.winterbe.expekt.should
 import org.junit.Test
-import kotlin.test.assertFailsWith
 
 import br.com.wirecard.desmond.bank.BankObjectFactory as objectFactory
 import br.com.wirecard.desmond.bank.validator.BancoDoBrasilValidator as validator
@@ -33,38 +32,25 @@ class BancoDoBrasilValidatorTest {
         validator.validateAgencyCheckDigit(validAgencyNumber, validCheckDigit).should.be.`true`
     }
 
-    @Test
+    @Test(expected = InvalidNumberLengthException::class)
     fun shouldThrowCorrectExceptionWhenAgencyNumberHasInvalidLength() {
         val invalidAgencyNumber = objectFactory.INVALID_LENGTH_AGENCY_NUMBER
         val validCheckDigit = objectFactory.VALID_CHECK_DIGIT
-        val validAgencyNumberLength = objectFactory.VALID_AGENCY_NUMBER.length
-        val invalidAgencyNumberLength = invalidAgencyNumber.length
-        val exceptionMessage = exceptionHelper.INVALID_NUMBER_LENGTH_MESSAGE.format(
-                validAgencyNumberLength, invalidAgencyNumberLength
-        )
-        assertFailsWith(InvalidNumberLengthException::class, exceptionMessage) {
-            validator.validateAgencyCheckDigit(invalidAgencyNumber, validCheckDigit)
-        }
+        validator.validateAgencyCheckDigit(invalidAgencyNumber, validCheckDigit)
     }
 
-    @Test
+    @Test(expected = EmptyCheckDigitException::class)
     fun shouldThrowCorrectExceptionWhenAgencyCheckDigitIsEmpty() {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
         val invalidCheckDigit = objectFactory.INVALID_EMPTY_CHECK_DIGIT
-        assertFailsWith(EmptyCheckDigitException::class, exceptionHelper.EMPTY_CHECK_DIGIT_MESSAGE) {
-            validator.validateAgencyCheckDigit(validAgencyNumber, invalidCheckDigit)
-        }
+        validator.validateAgencyCheckDigit(validAgencyNumber, invalidCheckDigit)
     }
 
-    @Test
+    @Test(expected = InvalidCheckDigitException::class)
     fun shouldThrowCorrectExceptionWhenAgencyCheckDigitIsInvalid() {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
         val invalidCheckDigit = objectFactory.INVALID_CHECK_DIGIT
-        val expectedCheckDigit = objectFactory.VALID_CHECK_DIGIT
-        val exceptionMessage = exceptionHelper.INVALID_CHECK_DIGIT_MESSAGE.format(expectedCheckDigit, invalidCheckDigit)
-        assertFailsWith(InvalidCheckDigitException::class, exceptionMessage) {
-            validator.validateAgencyCheckDigit(validAgencyNumber, invalidCheckDigit)
-        }
+        validator.validateAgencyCheckDigit(validAgencyNumber, invalidCheckDigit)
     }
 
     @Test
@@ -88,37 +74,24 @@ class BancoDoBrasilValidatorTest {
         validator.validateAccountCheckDigit(validAccountNumber, validCheckDigit).should.be.`true`
     }
 
-    @Test
+    @Test(expected = InvalidNumberLengthException::class)
     fun shouldThrowCorrectExceptionWhenAccountNumberHasInvalidLength() {
         val invalidAccountNumber = objectFactory.INVALID_LENGTH_ACCOUNT_NUMBER
         val validCheckDigit = objectFactory.VALID_CHECK_DIGIT
-        val validAccountNumberLength = objectFactory.VALID_ACCOUNT_NUMBER.length
-        val invalidAccountNumberLength = invalidAccountNumber.length
-        val exceptionMessage = exceptionHelper.INVALID_NUMBER_LENGTH_MESSAGE.format(
-                validAccountNumberLength, invalidAccountNumberLength
-        )
-        assertFailsWith(InvalidNumberLengthException::class, exceptionMessage) {
-            validator.validateAgencyCheckDigit(invalidAccountNumber, validCheckDigit)
-        }
+        validator.validateAgencyCheckDigit(invalidAccountNumber, validCheckDigit)
     }
 
-    @Test
+    @Test(expected = EmptyCheckDigitException::class)
     fun shouldThrowCorrectExceptionWhenAccountCheckDigitIsEmpty() {
         val validAccountNumber = objectFactory.VALID_ACCOUNT_NUMBER
         val invalidCheckDigit = objectFactory.INVALID_EMPTY_CHECK_DIGIT
-        assertFailsWith(EmptyCheckDigitException::class, exceptionHelper.EMPTY_CHECK_DIGIT_MESSAGE) {
-            validator.validateAgencyCheckDigit(validAccountNumber, invalidCheckDigit)
-        }
+        validator.validateAgencyCheckDigit(validAccountNumber, invalidCheckDigit)
     }
 
-    @Test
+    @Test(expected = InvalidCheckDigitException::class)
     fun shouldThrowCorrectExceptionWhenAccountCheckDigitIsInvalid() {
         val validAccountNumber = objectFactory.VALID_ACCOUNT_NUMBER
         val invalidCheckDigit = objectFactory.INVALID_CHECK_DIGIT
-        val expectedCheckDigit = objectFactory.VALID_CHECK_DIGIT
-        val exceptionMessage = exceptionHelper.INVALID_CHECK_DIGIT_MESSAGE.format(expectedCheckDigit, invalidCheckDigit)
-        assertFailsWith(InvalidCheckDigitException::class, exceptionMessage) {
-            validator.validateAccountCheckDigit(validAccountNumber, invalidCheckDigit)
-        }
+        validator.validateAccountCheckDigit(validAccountNumber, invalidCheckDigit)
     }
 }
