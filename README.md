@@ -1,5 +1,7 @@
 # Desmond
 
+> _See Ya In Anotha Life, Brotha!_
+
 1. What is Desmond?
 2. How does it work?
 3. How to use it?
