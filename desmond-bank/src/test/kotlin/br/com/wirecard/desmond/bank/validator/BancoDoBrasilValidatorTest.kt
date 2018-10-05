@@ -8,7 +8,6 @@ import org.junit.Test
 
 import br.com.wirecard.desmond.bank.BankObjectFactory as objectFactory
 import br.com.wirecard.desmond.bank.validator.BancoDoBrasilValidator as validator
-import br.com.wirecard.desmond.helper.ExceptionHelper as exceptionHelper
 
 class BancoDoBrasilValidatorTest {
     @Test

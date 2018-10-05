@@ -4,15 +4,20 @@ subprojects {
             kotlinVersion = '1.2.71'
             jUnitVersion = '4.12'
             expektVersion = '0.5.0'
+            kotlinterVersion = '1.20.0'
         }
 
         repositories {
             jcenter()
             mavenCentral()
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
         }
 
         dependencies {
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+            classpath "org.jmailen.gradle:kotlinter-gradle:$kotlinterVersion"
         }
     }
 }
