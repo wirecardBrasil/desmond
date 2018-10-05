@@ -1,16 +1,18 @@
-package br.com.wirecard.desmond.bank.validator
+package br.com.wirecard.desmond.bank.validator.bank
 
 import br.com.wirecard.desmond.bank.exception.EmptyCheckDigitException
 import br.com.wirecard.desmond.bank.exception.InvalidCheckDigitException
-import br.com.wirecard.desmond.bank.generator.BancoDoBrasilGenerator.Companion as generatorCompanion
+import br.com.wirecard.desmond.bank.validator.BankValidator
 
-class BancoDoBrasilValidator {
+import br.com.wirecard.desmond.bank.generator.bank.BradescoGenerator.Companion as generatorCompanion
+
+class BradescoValidator {
     companion object : BankValidator() {
         override fun validateAgencyCheckDigit(agencyNumber: String, checkDigit: String) =
-                validateCheckDigit(agencyNumber, checkDigit, generatorCompanion::generateAgencyCheckDigit)
+            validateCheckDigit(agencyNumber, checkDigit, generatorCompanion::generateAgencyCheckDigit)
 
         override fun validateAccountCheckDigit(accountNumber: String, checkDigit: String) =
-                validateCheckDigit(accountNumber, checkDigit, generatorCompanion::generateAccountCheckDigit)
+            validateCheckDigit(accountNumber, checkDigit, generatorCompanion::generateAccountCheckDigit)
 
         private fun validateCheckDigit(number: String, checkDigit: String, generator: (String) -> String): Boolean {
             if (checkDigit.isEmpty()) throw EmptyCheckDigitException()

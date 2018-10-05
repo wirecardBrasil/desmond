@@ -1,12 +1,12 @@
-package br.com.wirecard.desmond.bank.generator
+package br.com.wirecard.desmond.bank.generator.bank
 
 import com.winterbe.expekt.should
 import org.junit.Test
 
-import br.com.wirecard.desmond.bank.factory.BancoDoBrasilObjectFactory as objectFactory
-import br.com.wirecard.desmond.bank.generator.BancoDoBrasilGenerator as generator
+import br.com.wirecard.desmond.bank.factory.BradescoObjectFactory as objectFactory
+import br.com.wirecard.desmond.bank.generator.bank.BradescoGenerator as generator
 
-class BancoDoBrasilGeneratorTest {
+class BradescoGeneratorTest {
     @Test
     fun shouldReturnCorrectAgencyCheckDigit() {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
