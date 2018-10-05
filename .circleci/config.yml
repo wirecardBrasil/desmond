@@ -9,3 +9,7 @@ jobs:
         name: run tests
         command: |
           gradle test
+      - run:
+        name: run linter
+        command: |
+          gradle lintKotlin
