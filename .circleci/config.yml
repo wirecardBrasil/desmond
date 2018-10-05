@@ -8,8 +8,8 @@ jobs:
       - run:
           name: run tests
           command: |
-            gradle test
+            ./gradlew test
       - run:
           name: run linter
           command: |
-            gradle lintKotlin
+            ./gradlew lintKotlin
