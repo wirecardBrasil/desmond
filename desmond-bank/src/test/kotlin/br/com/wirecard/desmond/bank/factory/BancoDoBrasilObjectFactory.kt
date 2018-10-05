@@ -1,6 +1,6 @@
-package br.com.wirecard.desmond.bank
+package br.com.wirecard.desmond.bank.factory
 
-object BankObjectFactory {
+object BancoDoBrasilObjectFactory {
     const val VALID_AGENCY_NUMBER = "1234"
     const val VALID_ACCOUNT_NUMBER = "00001234"
     const val VALID_CHECK_DIGIT = "3"
