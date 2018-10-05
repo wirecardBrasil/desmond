@@ -7,7 +7,6 @@ import com.winterbe.expekt.should
 import org.junit.Test
 
 import br.com.wirecard.desmond.bank.BankObjectFactory as objectFactory
-import br.com.wirecard.desmond.helper.ExceptionHelper as exceptionHelper
 
 class BankAccountTest {
     @Test
