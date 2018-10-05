@@ -6,10 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
-        name: run tests
-        command: |
-          gradle test
+          name: run tests
+          command: |
+            gradle test
       - run:
-        name: run linter
-        command: |
-          gradle lintKotlin
+          name: run linter
+          command: |
+            gradle lintKotlin
