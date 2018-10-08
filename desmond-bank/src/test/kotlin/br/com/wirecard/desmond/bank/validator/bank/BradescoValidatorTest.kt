@@ -1,4 +1,4 @@
-package br.com.wirecard.desmond.bank.validator
+package br.com.wirecard.desmond.bank.validator.bank
 
 import br.com.wirecard.desmond.bank.exception.EmptyCheckDigitException
 import br.com.wirecard.desmond.bank.exception.InvalidCheckDigitException
@@ -6,10 +6,10 @@ import br.com.wirecard.desmond.bank.exception.InvalidNumberLengthException
 import com.winterbe.expekt.should
 import org.junit.Test
 
-import br.com.wirecard.desmond.bank.BankObjectFactory as objectFactory
-import br.com.wirecard.desmond.bank.validator.BancoDoBrasilValidator as validator
+import br.com.wirecard.desmond.bank.factory.BradescoObjectFactory as objectFactory
+import br.com.wirecard.desmond.bank.validator.bank.BradescoValidator as validator
 
-class BancoDoBrasilValidatorTest {
+class BradescoValidatorTest {
     @Test
     fun shouldHaveValidAgencyCheckDigit() {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
