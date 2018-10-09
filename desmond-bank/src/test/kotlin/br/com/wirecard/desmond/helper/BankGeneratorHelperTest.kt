@@ -7,10 +7,11 @@ import br.com.wirecard.desmond.helper.HelperObjectFactory as objectFactory
 
 class BankGeneratorHelperTest {
     @Test
-    fun shouldReturnCorrectResultWhenMultiplyingByWeight() {
+    fun shouldReturnCorrectRemainder() {
         val fakeNumber = objectFactory.FAKE_NUMBER
         val fakeWeight = objectFactory.FAKE_WEIGHT
-        val result = objectFactory.EXPECTED_OUTPUT_MULTIPLY_WEIGHT
-        bankGeneratorHelper.multiplyByWeight(fakeNumber, fakeWeight).should.equal(result)
+        val fakeMod = objectFactory.FAKE_MOD
+        val result = objectFactory.EXPECTED_REMAINDER
+        bankGeneratorHelper.getRemainder(fakeNumber, fakeWeight, fakeMod).should.equal(result)
     }
 }

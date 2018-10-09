@@ -15,7 +15,7 @@ class BankAccountTest {
         val agencyNumber = bancoDoBrasilObjectFactory.VALID_AGENCY_NUMBER
         val accountNumber = bancoDoBrasilObjectFactory.VALID_ACCOUNT_NUMBER
         val checkDigit = bancoDoBrasilObjectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BANCO_DO_BRASIL, agencyNumber, checkDigit, accountNumber, checkDigit)
+        val bankAccount = BankAccount(Bank.BancoDoBrasil, agencyNumber, checkDigit, accountNumber, checkDigit)
         bankAccount.isValid().should.be.`true`
     }
 
@@ -24,7 +24,7 @@ class BankAccountTest {
         val agencyNumber = bancoDoBrasilObjectFactory.INVALID_LENGTH_AGENCY_NUMBER
         val accountNumber = bancoDoBrasilObjectFactory.VALID_ACCOUNT_NUMBER
         val checkDigit = bancoDoBrasilObjectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BANCO_DO_BRASIL, agencyNumber, checkDigit, accountNumber, checkDigit)
+        val bankAccount = BankAccount(Bank.BancoDoBrasil, agencyNumber, checkDigit, accountNumber, checkDigit)
         bankAccount.isValid()
     }
 
@@ -33,7 +33,7 @@ class BankAccountTest {
         val agencyNumber = bancoDoBrasilObjectFactory.VALID_AGENCY_NUMBER
         val accountNumber = bancoDoBrasilObjectFactory.INVALID_LENGTH_ACCOUNT_NUMBER
         val checkDigit = bancoDoBrasilObjectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BANCO_DO_BRASIL, agencyNumber, checkDigit, accountNumber, checkDigit)
+        val bankAccount = BankAccount(Bank.BancoDoBrasil, agencyNumber, checkDigit, accountNumber, checkDigit)
         bankAccount.isValid()
     }
 
@@ -43,7 +43,7 @@ class BankAccountTest {
         val accountNumber = bancoDoBrasilObjectFactory.VALID_ACCOUNT_NUMBER
         val agencyCheckDigit = bancoDoBrasilObjectFactory.INVALID_CHECK_DIGIT
         val accountCheckDigit = bancoDoBrasilObjectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BANCO_DO_BRASIL, agencyNumber, agencyCheckDigit, accountNumber, accountCheckDigit)
+        val bankAccount = BankAccount(Bank.BancoDoBrasil, agencyNumber, agencyCheckDigit, accountNumber, accountCheckDigit)
         bankAccount.isValid()
     }
 
@@ -53,7 +53,7 @@ class BankAccountTest {
         val accountNumber = bancoDoBrasilObjectFactory.VALID_ACCOUNT_NUMBER
         val agencyCheckDigit = bancoDoBrasilObjectFactory.VALID_CHECK_DIGIT
         val accountCheckDigit = bancoDoBrasilObjectFactory.INVALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BANCO_DO_BRASIL, agencyNumber, agencyCheckDigit, accountNumber, accountCheckDigit)
+        val bankAccount = BankAccount(Bank.BancoDoBrasil, agencyNumber, agencyCheckDigit, accountNumber, accountCheckDigit)
         bankAccount.isValid()
     }
 
@@ -62,7 +62,7 @@ class BankAccountTest {
         val agencyNumber = bancoDoBrasilObjectFactory.VALID_AGENCY_NUMBER
         val accountNumber = bancoDoBrasilObjectFactory.VALID_ACCOUNT_NUMBER
         val checkDigit = bancoDoBrasilObjectFactory.INVALID_EMPTY_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BANCO_DO_BRASIL, agencyNumber, checkDigit, accountNumber, checkDigit)
+        val bankAccount = BankAccount(Bank.BancoDoBrasil, agencyNumber, checkDigit, accountNumber, checkDigit)
         bankAccount.isValid()
     }
 
@@ -71,7 +71,7 @@ class BankAccountTest {
         val agencyNumber = bradescoObjectFactory.VALID_AGENCY_NUMBER
         val accountNumber = bradescoObjectFactory.VALID_ACCOUNT_NUMBER
         val checkDigit = bradescoObjectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BRADESCO, agencyNumber, checkDigit, accountNumber, checkDigit)
+        val bankAccount = BankAccount(Bank.Bradesco, agencyNumber, checkDigit, accountNumber, checkDigit)
         bankAccount.isValid().should.be.`true`
     }
 
@@ -80,7 +80,7 @@ class BankAccountTest {
         val agencyNumber = bradescoObjectFactory.INVALID_LENGTH_AGENCY_NUMBER
         val accountNumber = bradescoObjectFactory.VALID_ACCOUNT_NUMBER
         val checkDigit = bradescoObjectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BRADESCO, agencyNumber, checkDigit, accountNumber, checkDigit)
+        val bankAccount = BankAccount(Bank.Bradesco, agencyNumber, checkDigit, accountNumber, checkDigit)
         bankAccount.isValid()
     }
 
@@ -89,7 +89,7 @@ class BankAccountTest {
         val agencyNumber = bradescoObjectFactory.VALID_AGENCY_NUMBER
         val accountNumber = bradescoObjectFactory.INVALID_LENGTH_ACCOUNT_NUMBER
         val checkDigit = bradescoObjectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BRADESCO, agencyNumber, checkDigit, accountNumber, checkDigit)
+        val bankAccount = BankAccount(Bank.Bradesco, agencyNumber, checkDigit, accountNumber, checkDigit)
         bankAccount.isValid()
     }
 
@@ -99,7 +99,7 @@ class BankAccountTest {
         val accountNumber = bradescoObjectFactory.VALID_ACCOUNT_NUMBER
         val agencyCheckDigit = bradescoObjectFactory.INVALID_CHECK_DIGIT
         val accountCheckDigit = bradescoObjectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BRADESCO, agencyNumber, agencyCheckDigit, accountNumber, accountCheckDigit)
+        val bankAccount = BankAccount(Bank.Bradesco, agencyNumber, agencyCheckDigit, accountNumber, accountCheckDigit)
         bankAccount.isValid()
     }
 
@@ -109,7 +109,7 @@ class BankAccountTest {
         val accountNumber = bradescoObjectFactory.VALID_ACCOUNT_NUMBER
         val agencyCheckDigit = bradescoObjectFactory.VALID_CHECK_DIGIT
         val accountCheckDigit = bradescoObjectFactory.INVALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BRADESCO, agencyNumber, agencyCheckDigit, accountNumber, accountCheckDigit)
+        val bankAccount = BankAccount(Bank.Bradesco, agencyNumber, agencyCheckDigit, accountNumber, accountCheckDigit)
         bankAccount.isValid()
     }
 
@@ -118,7 +118,7 @@ class BankAccountTest {
         val agencyNumber = bradescoObjectFactory.VALID_AGENCY_NUMBER
         val accountNumber = bradescoObjectFactory.VALID_ACCOUNT_NUMBER
         val checkDigit = bradescoObjectFactory.INVALID_EMPTY_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BRADESCO, agencyNumber, checkDigit, accountNumber, checkDigit)
+        val bankAccount = BankAccount(Bank.Bradesco, agencyNumber, checkDigit, accountNumber, checkDigit)
         bankAccount.isValid()
     }
 }
