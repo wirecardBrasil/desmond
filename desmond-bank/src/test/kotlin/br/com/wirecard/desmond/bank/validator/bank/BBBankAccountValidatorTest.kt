@@ -6,7 +6,6 @@ import br.com.wirecard.desmond.bank.exception.EmptyCheckDigitException
 import br.com.wirecard.desmond.bank.exception.InvalidCheckDigitException
 import com.winterbe.expekt.should
 import org.junit.Test
-import kotlin.math.exp
 
 import br.com.wirecard.desmond.bank.factory.BancoDoBrasilObjectFactory as objectFactory
 import br.com.wirecard.desmond.bank.validator.bank.BBBankAccountValidator as validator
