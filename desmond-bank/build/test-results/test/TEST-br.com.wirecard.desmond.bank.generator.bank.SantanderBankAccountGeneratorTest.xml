@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.wirecard.desmond.bank.generator.bank.SantanderBankAccountGeneratorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-10-09T23:03:40" hostname="Lucas-Queiroz.local" time="0.002">
+  <properties/>
+  <testcase name="shouldThrowCorrectExceptionWithMismatchedBank" classname="br.com.wirecard.desmond.bank.generator.bank.SantanderBankAccountGeneratorTest" time="0.0"/>
+  <testcase name="shouldGenerateCorrectCheckDigitWhenRemainderIsZero" classname="br.com.wirecard.desmond.bank.generator.bank.SantanderBankAccountGeneratorTest" time="0.0"/>
+  <testcase name="shouldThrowCorrectExceptionWhenAccountLengthIsIncorrect" classname="br.com.wirecard.desmond.bank.generator.bank.SantanderBankAccountGeneratorTest" time="0.0"/>
+  <testcase name="shouldGenerateCorrectCheckDigits" classname="br.com.wirecard.desmond.bank.generator.bank.SantanderBankAccountGeneratorTest" time="0.0"/>
+  <testcase name="shouldGenerateCorrectCheckDigitWhenNumberRequiresPadding" classname="br.com.wirecard.desmond.bank.generator.bank.SantanderBankAccountGeneratorTest" time="0.0"/>
+  <testcase name="shouldThrowCorrectExceptionWhenAgencyLengthIsIncorrect" classname="br.com.wirecard.desmond.bank.generator.bank.SantanderBankAccountGeneratorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

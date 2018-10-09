@@ -15,4 +15,6 @@ object SantanderObjectFactory {
 
     const val INVALID_LENGTH_AGENCY_NUMBER = "00000"
     const val INVALID_LENGTH_ACCOUNT_NUMBER = "000000000"
+    const val INVALID_CHECK_DIGIT = "1"
+    const val INVALID_EMPTY_CHECK_DIGIT = ""
 }

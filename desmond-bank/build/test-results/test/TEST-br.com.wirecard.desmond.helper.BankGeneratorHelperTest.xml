@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.wirecard.desmond.helper.BankGeneratorHelperTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-09T23:03:40" hostname="Lucas-Queiroz.local" time="0.001">
+  <properties/>
+  <testcase name="shouldReturnCorrectRemainder" classname="br.com.wirecard.desmond.helper.BankGeneratorHelperTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
