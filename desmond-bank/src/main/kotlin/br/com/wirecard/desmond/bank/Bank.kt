@@ -1,6 +1,6 @@
 package br.com.wirecard.desmond.bank
 
-enum class Bank {
-    BANCO_DO_BRASIL,
-    BRADESCO
+sealed class Bank(val bankCode: String, val bankName: String) {
+    object BancoDoBrasil : Bank("001", "BCO DO BRASIL S.A.")
+    object Bradesco : Bank("237", "BCO BRADESCO S.A.")
 }

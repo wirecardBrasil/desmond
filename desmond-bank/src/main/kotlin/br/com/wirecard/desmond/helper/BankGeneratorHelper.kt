@@ -8,7 +8,7 @@ object BankGeneratorHelper {
     const val BANCO_DO_BRASIL_MOD = 11
     const val BRADESCO_MOD = 11
 
-    fun multiplyByWeight(number: String, weight: Array<Int>): Int {
-        return number.map(Character::getNumericValue).mapIndexed { i, digit -> digit * weight[i] }.sum()
+    fun getRemainder(number: String, weight: Array<Int>, mod: Int): Int {
+        return number.map(Character::getNumericValue).mapIndexed { i, digit -> digit * weight[i] }.sum() % mod
     }
 }

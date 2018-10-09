@@ -1,19 +1,25 @@
 package br.com.wirecard.desmond.bank
 
-import br.com.wirecard.desmond.bank.validator.bank.BancoDoBrasilValidator
-import br.com.wirecard.desmond.bank.validator.bank.BradescoValidator
+import br.com.wirecard.desmond.bank.validator.bank.BBBankAccountValidator
+import br.com.wirecard.desmond.bank.validator.bank.BradescoBankAccountValidator
 
-class BankAccount(
+data class BankAccount(
     val bank: Bank,
-    val agencyNumber: String,
-    val agencyCheckDigit: String,
-    val accountNumber: String,
-    val accountCheckNumber: String
+    var agencyNumber: String,
+    var agencyCheckDigit: String,
+    var accountNumber: String,
+    var accountCheckDigit: String
 ) {
+    constructor(
+        bank: Bank,
+        agencyNumber: String,
+        accountNumber: String
+    ) : this(bank, agencyNumber, "", accountNumber, "")
+
     fun isValid(): Boolean {
         return when (bank) {
-            Bank.BANCO_DO_BRASIL -> BancoDoBrasilValidator.validate(this)
-            Bank.BRADESCO -> BradescoValidator.validate(this)
+            Bank.BancoDoBrasil -> BBBankAccountValidator.validate(this)
+            Bank.Bradesco -> BradescoBankAccountValidator.validate(this)
         }
     }
 }
