@@ -20,10 +20,7 @@ class BradescoBankAccountGenerator {
                 throw MismatchedBankException(Bank.Bradesco, bankAccount.bank)
             val agencyCheckDigit = generateAgencyCheckDigit(bankAccount.agencyNumber)
             val accountCheckDigit = generateAccountCheckDigit(bankAccount.accountNumber)
-            val bankAccountClone = bankAccount.copy()
-            bankAccountClone.agencyCheckDigit = agencyCheckDigit
-            bankAccountClone.accountCheckDigit = accountCheckDigit
-            return bankAccountClone
+            return bankAccount.copy(agencyCheckDigit = agencyCheckDigit, accountCheckDigit = accountCheckDigit)
         }
 
         private fun generateAgencyCheckDigit(agencyNumber: String): String {

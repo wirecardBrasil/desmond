@@ -20,6 +20,7 @@ data class BankAccount(
         return when (bank) {
             Bank.BancoDoBrasil -> BBBankAccountValidator.validate(this)
             Bank.Bradesco -> BradescoBankAccountValidator.validate(this)
+            Bank.Santander -> true
         }
     }
 }
