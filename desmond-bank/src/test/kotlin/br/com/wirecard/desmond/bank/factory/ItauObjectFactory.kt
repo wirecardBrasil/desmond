@@ -14,6 +14,4 @@ object ItauObjectFactory {
     const val VALID_CHECK_DIGIT_NUMBER_TWO_DIGITS = "5"
     const val INVALID_LENGTH_AGENCY_NUMBER = "00000"
     const val INVALID_LENGTH_ACCOUNT_NUMBER = "00000000"
-    const val INVALID_CHECK_DIGIT = "1"
-    const val INVALID_EMPTY_CHECK_DIGIT = ""
 }
