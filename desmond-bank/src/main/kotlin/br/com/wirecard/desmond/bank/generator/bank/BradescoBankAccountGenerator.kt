@@ -6,6 +6,7 @@ import br.com.wirecard.desmond.bank.exception.InvalidNumberLengthException
 import br.com.wirecard.desmond.bank.exception.MismatchedBankException
 import br.com.wirecard.desmond.bank.generator.BankAccountGenerator
 import br.com.wirecard.desmond.helper.BankGeneratorHelper as helper
+import br.com.wirecard.desmond.helper.RemainderHelper as remainderHelper
 
 /**
  * Bradesco Bank Account Generator
@@ -39,8 +40,9 @@ class BradescoBankAccountGenerator {
 
         private fun calculateCheckDigit(number: String, weight: Array<Int>): String {
             val paddedNumber = number.padStart(weight.size, '0')
-            val remainder = helper.getRemainder(paddedNumber, weight, helper.BRADESCO_MOD)
-            val subtraction = helper.BRADESCO_MOD - remainder
+            val mod = helper.BRADESCO_MOD
+            val remainder = remainderHelper.getRemainder(paddedNumber, weight, mod)
+            val subtraction = mod - remainder
             return when (subtraction) {
                 11 -> "0"
                 10 -> "P"

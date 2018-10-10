@@ -11,13 +11,4 @@ object BankGeneratorHelper {
     const val SANTANDER_MOD = 10
     const val SANTANDER_AGENCY_LENGTH = 4
     const val SANTANDER_ACCOUNT_LENGTH = 8
-
-    fun getRemainder(number: String, weight: Array<Int>, mod: Int, lastDigitOnly: Boolean = false): Int {
-        return number.map(Character::getNumericValue).mapIndexed { i, digit ->
-            var remainder = digit * weight[i]
-            if (lastDigitOnly)
-                remainder %= 10
-            remainder
-        }.sum() % mod
-    }
 }

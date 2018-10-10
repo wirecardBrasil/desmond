@@ -24,11 +24,9 @@ data class BankAccount(
         accountCheckDigit: String
     ) : this(bank, agencyNumber, "", accountNumber, accountCheckDigit)
 
-    fun isValid(): Boolean {
-        return when (bank) {
-            Bank.BancoDoBrasil -> BBBankAccountValidator.validate(this)
-            Bank.Bradesco -> BradescoBankAccountValidator.validate(this)
-            Bank.Santander -> SantanderBankAccountValidator.validate(this)
-        }
+    fun isValid(): Boolean = when (bank) {
+        Bank.BancoDoBrasil -> BBBankAccountValidator.validate(this)
+        Bank.Bradesco -> BradescoBankAccountValidator.validate(this)
+        Bank.Santander -> SantanderBankAccountValidator.validate(this)
     }
 }
