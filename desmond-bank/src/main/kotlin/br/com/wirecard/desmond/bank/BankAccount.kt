@@ -2,6 +2,7 @@ package br.com.wirecard.desmond.bank
 
 import br.com.wirecard.desmond.bank.validator.bank.BBBankAccountValidator
 import br.com.wirecard.desmond.bank.validator.bank.BradescoBankAccountValidator
+import br.com.wirecard.desmond.bank.validator.bank.ItauBankAccountValidator
 import br.com.wirecard.desmond.bank.validator.bank.SantanderBankAccountValidator
 
 data class BankAccount(
@@ -28,5 +29,6 @@ data class BankAccount(
         Bank.BancoDoBrasil -> BBBankAccountValidator.validate(this)
         Bank.Bradesco -> BradescoBankAccountValidator.validate(this)
         Bank.Santander -> SantanderBankAccountValidator.validate(this)
+        Bank.Itau -> ItauBankAccountValidator.validate(this)
     }
 }

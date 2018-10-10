@@ -20,7 +20,7 @@ class SantanderBankAccountGenerator {
     companion object : BankAccountGenerator {
         override fun generate(bankAccount: BankAccount): BankAccount {
             if (bankAccount.bank != Bank.Santander)
-                throw MismatchedBankException(Bank.Bradesco, bankAccount.bank)
+                throw MismatchedBankException(Bank.Santander, bankAccount.bank)
             val accountCheckDigit = generateAccountCheckDigit(bankAccount)
             return bankAccount.copy(accountCheckDigit = accountCheckDigit)
         }
