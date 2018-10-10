@@ -7,6 +7,8 @@ import br.com.wirecard.desmond.bank.exception.MismatchedBankException
 import br.com.wirecard.desmond.bank.generator.BankAccountGenerator
 
 import br.com.wirecard.desmond.helper.BankGeneratorHelper as helper
+import br.com.wirecard.desmond.helper.RemainderHelper as remainderHelper
+import br.com.wirecard.desmond.helper.RemainderCalculator.LastDigitOnly as calculator
 
 /**
  * Santander Bank Account Generator
@@ -40,7 +42,8 @@ class SantanderBankAccountGenerator {
         }
 
         private fun calculateCheckDigit(number: String, weight: Array<Int>): String {
-            val remainder = helper.getRemainder(number, weight, helper.SANTANDER_MOD, lastDigitOnly = true)
+            val mod = helper.SANTANDER_MOD
+            val remainder = remainderHelper.getRemainder(number, weight, mod, calculator)
             val subtraction = helper.SANTANDER_MOD - remainder
             return when (subtraction) {
                 10 -> "0"
