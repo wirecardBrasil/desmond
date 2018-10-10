@@ -6,23 +6,23 @@ import br.com.wirecard.desmond.bank.validator.bank.ItauBankAccountValidator
 import br.com.wirecard.desmond.bank.validator.bank.SantanderBankAccountValidator
 
 data class BankAccount(
-        val bank: Bank,
-        var agencyNumber: String,
-        var agencyCheckDigit: String,
-        var accountNumber: String,
-        var accountCheckDigit: String
+    val bank: Bank,
+    var agencyNumber: String,
+    var agencyCheckDigit: String,
+    var accountNumber: String,
+    var accountCheckDigit: String
 ) {
     constructor(
-            bank: Bank,
-            agencyNumber: String,
-            accountNumber: String
+        bank: Bank,
+        agencyNumber: String,
+        accountNumber: String
     ) : this(bank, agencyNumber, "", accountNumber, "")
 
     constructor(
-            bank: Bank,
-            agencyNumber: String,
-            accountNumber: String,
-            accountCheckDigit: String
+        bank: Bank,
+        agencyNumber: String,
+        accountNumber: String,
+        accountCheckDigit: String
     ) : this(bank, agencyNumber, "", accountNumber, accountCheckDigit)
 
     fun isValid() = when (bank) {
