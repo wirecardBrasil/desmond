@@ -2,7 +2,6 @@ package br.com.wirecard.desmond.bank.generator.bank
 
 import br.com.wirecard.desmond.bank.Bank
 import br.com.wirecard.desmond.bank.BankAccount
-import br.com.wirecard.desmond.bank.exception.InvalidNumberLengthException
 import br.com.wirecard.desmond.bank.exception.MismatchedBankException
 import br.com.wirecard.desmond.bank.generator.BankAccountGenerator
 import br.com.wirecard.desmond.extension.normalizeNumber
