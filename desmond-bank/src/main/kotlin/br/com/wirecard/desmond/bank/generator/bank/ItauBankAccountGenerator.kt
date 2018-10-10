@@ -8,19 +8,19 @@ import br.com.wirecard.desmond.bank.generator.BankAccountGenerator
 
 import br.com.wirecard.desmond.helper.BankGeneratorHelper as helper
 import br.com.wirecard.desmond.helper.RemainderHelper as remainderHelper
-import br.com.wirecard.desmond.helper.RemainderCalculator.LastDigitOnly as calculator
+import br.com.wirecard.desmond.helper.RemainderCalculator.SumDigits as calculator
 
 /**
- * Santander Bank Account Generator
+ * Itaú Bank Account Generator
  *
- * Generates valid Bank Account objects for Santander
- * Refer to /docs/SANTANDER.md for the check digit algorithm
+ * Generates valid Bank Account objects for Itaú
+ * Refer to /docs/ITAU.md for the check digit algorithm
  */
-class SantanderBankAccountGenerator {
+class ItauBankAccountGenerator {
     companion object : BankAccountGenerator {
         override fun generate(bankAccount: BankAccount): BankAccount {
-            if (bankAccount.bank != Bank.Santander)
-                throw MismatchedBankException(Bank.Santander, bankAccount.bank)
+            if (bankAccount.bank != Bank.Itau)
+                throw MismatchedBankException(Bank.Itau, bankAccount.bank)
             val accountCheckDigit = generateAccountCheckDigit(bankAccount)
             return bankAccount.copy(accountCheckDigit = accountCheckDigit)
         }
@@ -29,22 +29,21 @@ class SantanderBankAccountGenerator {
             var agencyNumber = bankAccount.agencyNumber
             var accountNumber = bankAccount.accountNumber
 
-            if (agencyNumber.length > helper.SANTANDER_AGENCY_LENGTH)
-                throw InvalidNumberLengthException(helper.SANTANDER_AGENCY_LENGTH, agencyNumber.length)
-            if (accountNumber.length > helper.SANTANDER_ACCOUNT_LENGTH)
-                throw InvalidNumberLengthException(helper.SANTANDER_ACCOUNT_LENGTH, accountNumber.length)
+            if (agencyNumber.length > helper.ITAU_AGENCY_LENGTH)
+                throw InvalidNumberLengthException(helper.ITAU_AGENCY_LENGTH, agencyNumber.length)
+            if (accountNumber.length > helper.ITAU_ACCOUNT_LENGTH)
+                throw InvalidNumberLengthException(helper.ITAU_ACCOUNT_LENGTH, accountNumber.length)
 
-            agencyNumber = agencyNumber.padStart(helper.SANTANDER_AGENCY_LENGTH, '0')
-            accountNumber = accountNumber.padStart(helper.SANTANDER_ACCOUNT_LENGTH, '0')
+            agencyNumber = agencyNumber.padStart(helper.ITAU_AGENCY_LENGTH, '0')
+            accountNumber = accountNumber.padStart(helper.ITAU_ACCOUNT_LENGTH, '0')
 
             val agencyAndAccountNumber = agencyNumber + accountNumber
-            return calculateCheckDigit(agencyAndAccountNumber, helper.SANTANDER_WEIGHT)
+            return calculateCheckDigit(agencyAndAccountNumber, helper.ITAU_WEIGHT)
         }
 
         private fun calculateCheckDigit(number: String, weight: Array<Int>): String {
-            val mod = helper.SANTANDER_MOD
-            val remainder = remainderHelper.getRemainder(number, weight, mod, calculator)
-            val subtraction = helper.SANTANDER_MOD - remainder
+            val remainder = remainderHelper.getRemainder(number, weight, helper.ITAU_MOD, calculator)
+            val subtraction = helper.ITAU_MOD - remainder
             return when (subtraction) {
                 10 -> "0"
                 else -> subtraction.toString()
