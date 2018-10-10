@@ -110,7 +110,9 @@ Account number: `12345`
 5. Get the mod of the sum by `10`  
 `29 % 10 = 9`
 
-7. Otherwise, the check digit is the subtraction of the mod by `10`.  
+6. If the remainder is `0`, the check digit is `0`
+
+7. Otherwise, the check digit is the difference of the mod (`10`) and the remainder.  
 `10 - 9 = 1`
 
 In this case, the digit would be `1`.

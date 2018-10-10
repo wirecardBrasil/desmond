@@ -43,9 +43,10 @@ class ItauBankAccountGenerator {
 
         private fun calculateCheckDigit(number: String, weight: Array<Int>): String {
             val remainder = remainderHelper.getRemainder(number, weight, helper.ITAU_MOD, calculator)
-            val subtraction = helper.ITAU_MOD - remainder
-            return when (subtraction) {
-                10 -> "0"
+            val mod = helper.ITAU_MOD
+            val subtraction = mod - remainder
+            return when (remainder) {
+                0 -> "0"
                 else -> subtraction.toString()
             }
         }
