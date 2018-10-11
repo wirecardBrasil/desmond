@@ -19,9 +19,9 @@ class BradescoBankAccountValidator {
             if (bankAccount.agencyCheckDigit.isEmpty() || bankAccount.accountCheckDigit.isEmpty())
                 throw EmptyCheckDigitException()
             val generatedBankAccount = generator.generate(bankAccount)
-            if (generatedBankAccount.agencyCheckDigit != bankAccount.agencyCheckDigit)
+            if (generatedBankAccount.agencyCheckDigit != bankAccount.agencyCheckDigit.toUpperCase())
                 throw InvalidCheckDigitException(generatedBankAccount.agencyCheckDigit, bankAccount.agencyCheckDigit)
-            if (generatedBankAccount.accountCheckDigit != bankAccount.accountCheckDigit)
+            if (generatedBankAccount.accountCheckDigit != bankAccount.accountCheckDigit.toUpperCase())
                 throw InvalidCheckDigitException(generatedBankAccount.accountCheckDigit, bankAccount.accountCheckDigit)
             return true
         }

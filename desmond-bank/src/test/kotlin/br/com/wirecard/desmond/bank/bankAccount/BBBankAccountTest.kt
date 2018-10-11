@@ -3,12 +3,11 @@ package br.com.wirecard.desmond.bank.bankAccount
 import org.junit.Test
 import java.lang.Exception
 import kotlin.test.fail
-import br.com.wirecard.desmond.bank.bankAccount.BankAccountHelper as helper
 
-class ItauBankAccountTest {
+class BBBankAccountTest {
     @Test
     fun allBankAccountsShouldBeValid() {
-        val bankAccounts = helper.getItauBankAccountList()
+        val bankAccounts = BankAccountHelper.getBancoDoBrasilBankAccountList()
         for (bankAccount in bankAccounts) {
             try {
                 bankAccount.isValid()
