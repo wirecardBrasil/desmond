@@ -14,6 +14,7 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: jUnitVersion
     testCompile group: 'com.winterbe', name: 'expekt', version: expektVersion
     testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-test'
+    testCompile group: 'org.apache.commons', name: 'commons-csv', version: commonsCSVVersion
 }
 
 compileKotlin {
