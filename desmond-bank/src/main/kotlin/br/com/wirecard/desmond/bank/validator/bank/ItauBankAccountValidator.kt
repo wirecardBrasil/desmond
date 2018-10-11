@@ -20,7 +20,7 @@ class ItauBankAccountValidator {
                 throw EmptyCheckDigitException()
             val generatedBankAccount = generator.generate(bankAccount)
             if (generatedBankAccount.accountCheckDigit != bankAccount.accountCheckDigit)
-                throw InvalidCheckDigitException(generatedBankAccount.agencyCheckDigit, bankAccount.agencyCheckDigit)
+                throw InvalidCheckDigitException(generatedBankAccount.accountCheckDigit, bankAccount.accountCheckDigit)
             return true
         }
     }
