@@ -24,4 +24,13 @@ class RemainderHelperTest {
         val expectedRemainder = helper.LAST_DIGIT_ONLY_EXPECTED_RESULT
         remainderHelper.getRemainder(fakeNumber, fakeWeight, fakeMod, lastDigitOnlyCalculator).should.equal(expectedRemainder)
     }
+
+    @Test
+    fun `should return correct remainder when using SumDigits calculator`(){
+        val fakeNumber = helper.FAKE_NUMBER_SUM_DIGITS_CALCULATOR
+        val fakeWeight = helper.FAKE_WEIGHT_SUM_DIGITS_CALCULATOR
+        val fakeMod = helper.FAKE_MOD_SUM_DIGITS_CALCULATOR
+        val expectedRemainder = helper.SUM_DIGITS_EXPECTED_RESULT
+
+    }
 }
