@@ -12,6 +12,7 @@ object BankAccountHelper {
     const val VALID_ITAU_CSV = "valid/itau.csv"
     const val VALID_BB_CSV = "valid/bb.csv"
     const val VALID_SANTANDER_CSV = "valid/santander.csv"
+    const val VALID_BRADESCO_CSV = "valid/bradesco.csv"
 
     fun getItauBankAccountList(): List<BankAccount> {
         val csvParser = getParser(VALID_ITAU_CSV)
@@ -26,6 +27,11 @@ object BankAccountHelper {
     fun getSantanderBankAccountList(): List<BankAccount> {
         val csvParser = getParser(VALID_SANTANDER_CSV)
         return convertCSV(Bank.Santander, csvParser)
+    }
+    
+    fun getBradescoBankAccountList(): List<BankAccount> {
+        val csvParser = getParser(VALID_BRADESCO_CSV)
+        return convertCSV(Bank.Bradesco, csvParser)
     }
 
     private fun getParser(file: String): CSVParser {
