@@ -2,9 +2,9 @@ package br.com.wirecard.desmond.bank.generator.bank
 
 import br.com.wirecard.desmond.bank.Bank
 import br.com.wirecard.desmond.bank.BankAccount
-import br.com.wirecard.desmond.bank.exception.InvalidNumberLengthException
 import br.com.wirecard.desmond.bank.exception.MismatchedBankException
 import br.com.wirecard.desmond.bank.generator.BankAccountGenerator
+import br.com.wirecard.desmond.extension.normalizeNumber
 
 import br.com.wirecard.desmond.helper.BankGeneratorHelper as helper
 import br.com.wirecard.desmond.helper.RemainderHelper as remainderHelper
@@ -26,17 +26,8 @@ class SantanderBankAccountGenerator {
         }
 
         private fun generateAccountCheckDigit(bankAccount: BankAccount): String {
-            var agencyNumber = bankAccount.agencyNumber
-            var accountNumber = bankAccount.accountNumber
-
-            if (agencyNumber.length > helper.SANTANDER_AGENCY_LENGTH)
-                throw InvalidNumberLengthException(helper.SANTANDER_AGENCY_LENGTH, agencyNumber.length)
-            if (accountNumber.length > helper.SANTANDER_ACCOUNT_LENGTH)
-                throw InvalidNumberLengthException(helper.SANTANDER_ACCOUNT_LENGTH, accountNumber.length)
-
-            agencyNumber = agencyNumber.padStart(helper.SANTANDER_AGENCY_LENGTH, '0')
-            accountNumber = accountNumber.padStart(helper.SANTANDER_ACCOUNT_LENGTH, '0')
-
+            val agencyNumber = bankAccount.agencyNumber.normalizeNumber(helper.SANTANDER_AGENCY_LENGTH)
+            val accountNumber = bankAccount.accountNumber.normalizeNumber(helper.SANTANDER_ACCOUNT_LENGTH)
             val agencyAndAccountNumber = agencyNumber + accountNumber
             return calculateCheckDigit(agencyAndAccountNumber, helper.SANTANDER_WEIGHT)
         }

@@ -2,9 +2,9 @@ package br.com.wirecard.desmond.bank.generator.bank
 
 import br.com.wirecard.desmond.bank.Bank
 import br.com.wirecard.desmond.bank.BankAccount
-import br.com.wirecard.desmond.bank.exception.InvalidNumberLengthException
 import br.com.wirecard.desmond.bank.exception.MismatchedBankException
 import br.com.wirecard.desmond.bank.generator.BankAccountGenerator
+import br.com.wirecard.desmond.extension.normalizeNumber
 
 import br.com.wirecard.desmond.helper.BankGeneratorHelper as helper
 import br.com.wirecard.desmond.helper.RemainderHelper as remainderHelper
@@ -27,22 +27,19 @@ class BBBankAccountGenerator {
 
         private fun generateAgencyCheckDigit(agencyNumber: String): String {
             val weight = helper.BANCO_DO_BRASIL_AGENCY_WEIGHT
-            if (agencyNumber.length > weight.size)
-                throw InvalidNumberLengthException(weight.size, agencyNumber.length)
-            return calculateCheckDigit(agencyNumber, weight)
+            val normalizedNumber = agencyNumber.normalizeNumber(weight.size)
+            return calculateCheckDigit(normalizedNumber, weight)
         }
 
         private fun generateAccountCheckDigit(accountNumber: String): String {
             val weight = helper.BANCO_DO_BRASIL_ACCOUNT_WEIGHT
-            if (accountNumber.length > weight.size)
-                throw InvalidNumberLengthException(weight.size, accountNumber.length)
-            return calculateCheckDigit(accountNumber, weight)
+            val normalizedNumber = accountNumber.normalizeNumber(weight.size)
+            return calculateCheckDigit(normalizedNumber, weight)
         }
 
         private fun calculateCheckDigit(number: String, weight: Array<Int>): String {
-            val paddedNumber = number.padStart(weight.size, '0')
             val mod = helper.BANCO_DO_BRASIL_MOD
-            val remainder = remainderHelper.getRemainder(paddedNumber, weight, mod)
+            val remainder = remainderHelper.getRemainder(number, weight, mod)
             val subtraction = mod - remainder
             return when (subtraction) {
                 11 -> "0"
