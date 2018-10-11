@@ -23,12 +23,12 @@ object BankAccountHelper {
         val csvParser = getParser(VALID_BB_CSV)
         return convertCSV(Bank.BancoDoBrasil, csvParser)
     }
-    
+
     fun getSantanderBankAccountList(): List<BankAccount> {
         val csvParser = getParser(VALID_SANTANDER_CSV)
         return convertCSV(Bank.Santander, csvParser)
     }
-    
+
     fun getBradescoBankAccountList(): List<BankAccount> {
         val csvParser = getParser(VALID_BRADESCO_CSV)
         return convertCSV(Bank.Bradesco, csvParser)
