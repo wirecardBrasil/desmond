@@ -8,7 +8,7 @@ import br.com.wirecard.desmond.extension.normalizeNumber
 
 import br.com.wirecard.desmond.helper.BankGeneratorHelper as helper
 import br.com.wirecard.desmond.helper.RemainderHelper as remainderHelper
-import br.com.wirecard.desmond.helper.RemainderCalculator.WithMultiplier as calculator
+import br.com.wirecard.desmond.helper.RemainderCalculator.Default as calculator
 
 /**
  * Caixa Econômica Federal Bank Account Generator

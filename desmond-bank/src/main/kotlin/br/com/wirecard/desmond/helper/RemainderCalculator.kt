@@ -4,5 +4,4 @@ sealed class RemainderCalculator {
     object Default : RemainderCalculator()
     object LastDigitOnly : RemainderCalculator()
     object SumDigits : RemainderCalculator()
-    object WithMultiplier : RemainderCalculator()
 }
