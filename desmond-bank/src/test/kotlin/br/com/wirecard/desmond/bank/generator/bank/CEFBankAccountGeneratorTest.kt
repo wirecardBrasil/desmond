@@ -31,7 +31,6 @@ class CEFBankAccountGeneratorTest {
         generatedBankAccount.accountCheckDigit.should.equal(validCheckDigit)
     }
 
-
     @Test
     fun shouldGenerateCorrectCheckDigitWhenNumberRequiresPadding() {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER_TWO_DIGITS
