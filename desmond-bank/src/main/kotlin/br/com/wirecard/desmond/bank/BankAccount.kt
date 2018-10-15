@@ -4,6 +4,7 @@ import br.com.wirecard.desmond.bank.validator.bank.BBBankAccountValidator
 import br.com.wirecard.desmond.bank.validator.bank.BradescoBankAccountValidator
 import br.com.wirecard.desmond.bank.validator.bank.ItauBankAccountValidator
 import br.com.wirecard.desmond.bank.validator.bank.SantanderBankAccountValidator
+import br.com.wirecard.desmond.bank.validator.bank.CEFBankAccountValidator
 
 data class BankAccount(
     val bank: Bank,
@@ -30,5 +31,6 @@ data class BankAccount(
         Bank.Bradesco -> BradescoBankAccountValidator.validate(this)
         Bank.Santander -> SantanderBankAccountValidator.validate(this)
         Bank.Itau -> ItauBankAccountValidator.validate(this)
+        Bank.CEF -> CEFBankAccountValidator.validate(this)
     }
 }
