@@ -2,6 +2,7 @@ package br.com.wirecard.desmond.bank
 
 import br.com.wirecard.desmond.bank.validator.bank.*
 
+
 data class BankAccount(
     val bank: Bank,
     var agencyNumber: String,
