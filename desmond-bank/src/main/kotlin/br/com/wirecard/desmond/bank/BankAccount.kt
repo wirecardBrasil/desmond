@@ -1,7 +1,10 @@
 package br.com.wirecard.desmond.bank
 
-import br.com.wirecard.desmond.bank.validator.bank.*
-
+import br.com.wirecard.desmond.bank.validator.bank.BBBankAccountValidator
+import br.com.wirecard.desmond.bank.validator.bank.BradescoBankAccountValidator
+import br.com.wirecard.desmond.bank.validator.bank.ItauBankAccountValidator
+import br.com.wirecard.desmond.bank.validator.bank.SantanderBankAccountValidator
+import br.com.wirecard.desmond.bank.validator.bank.CEFBankAccountValidator
 
 data class BankAccount(
     val bank: Bank,
