@@ -19,6 +19,4 @@ object RemainderHelper {
             operator(digit * weight[i])
         }.sum() * multiplier % mod
     }
-
-
 }
