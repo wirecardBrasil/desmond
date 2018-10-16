@@ -8,9 +8,9 @@ Weight: `3, 2, 4, 7, 6, 5, 4, 3, 2`
 
 1. Multiply each number by the correct weight
 2. Sum the results
-3. Get the mod of the sum by 11
+3. Get the _remainder_ of the sum divided by `11`
 5. If the result is `0`, then the check digit is `0`.
-6. If the result is `1`, then the check digit is `6`. Otherwise, subtract the result by `11`.
+6. If the result is `1`, then the check digit is `6`. Otherwise, subtract the _remainder_ from `11`.
 
 Example:
 
