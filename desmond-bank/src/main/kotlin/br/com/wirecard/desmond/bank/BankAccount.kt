@@ -1,6 +1,7 @@
 package br.com.wirecard.desmond.bank
 
 import br.com.wirecard.desmond.bank.validator.bank.BBBankAccountValidator
+import br.com.wirecard.desmond.bank.validator.bank.BanrisulBankAccountValidator
 import br.com.wirecard.desmond.bank.validator.bank.BradescoBankAccountValidator
 import br.com.wirecard.desmond.bank.validator.bank.ItauBankAccountValidator
 import br.com.wirecard.desmond.bank.validator.bank.SantanderBankAccountValidator
@@ -32,5 +33,6 @@ data class BankAccount(
         Bank.Santander -> SantanderBankAccountValidator.validate(this)
         Bank.Itau -> ItauBankAccountValidator.validate(this)
         Bank.CEF -> CEFBankAccountValidator.validate(this)
+        Bank.Banrisul -> BanrisulBankAccountValidator.validate(this)
     }
 }

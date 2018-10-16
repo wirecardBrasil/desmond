@@ -7,16 +7,16 @@ import br.com.wirecard.desmond.bank.exception.InvalidCheckDigitException
 import com.winterbe.expekt.should
 import org.junit.Test
 
-import br.com.wirecard.desmond.bank.factory.CEFObjectFactory as objectFactory
-import br.com.wirecard.desmond.bank.validator.bank.CEFBankAccountValidator as validator
+import br.com.wirecard.desmond.bank.factory.BanrisulObjectFactory as objectFactory
+import br.com.wirecard.desmond.bank.validator.bank.BanrisulBankAccountValidator as validator
 
-class CEFBankAccountValidatorTest {
+class BanrisulBankAccountValidatorTest {
     @Test
     fun shouldBeTrueForValidAgencyAndAccount() {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
         val validAccountNumber = objectFactory.VALID_ACCOUNT_NUMBER
         val validCheckDigit = objectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.CEF, validAgencyNumber, validCheckDigit, validAccountNumber, validCheckDigit)
+        val bankAccount = BankAccount(Bank.Banrisul, validAgencyNumber, validCheckDigit, validAccountNumber, validCheckDigit)
         validator.validate(bankAccount).should.be.`true`
     }
 
@@ -25,7 +25,7 @@ class CEFBankAccountValidatorTest {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
         val validAccountNumber = objectFactory.VALID_ACCOUNT_NUMBER
         val invalidAccountCheckDigit = objectFactory.INVALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.CEF, validAgencyNumber, validAccountNumber, invalidAccountCheckDigit)
+        val bankAccount = BankAccount(Bank.Banrisul, validAgencyNumber, validAccountNumber, invalidAccountCheckDigit)
         validator.validate(bankAccount)
     }
 
@@ -34,7 +34,7 @@ class CEFBankAccountValidatorTest {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
         val validAccountNumber = objectFactory.VALID_ACCOUNT_NUMBER
         val invalidAccountCheckDigit = objectFactory.INVALID_EMPTY_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.CEF, validAgencyNumber, validAccountNumber, invalidAccountCheckDigit)
+        val bankAccount = BankAccount(Bank.Banrisul, validAgencyNumber, validAccountNumber, invalidAccountCheckDigit)
         validator.validate(bankAccount)
     }
 }

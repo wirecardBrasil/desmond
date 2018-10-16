@@ -1,0 +1,22 @@
+package br.com.wirecard.desmond.bank.factory
+
+object BanrisulObjectFactory {
+    const val VALID_AGENCY_NUMBER = "1234"
+    const val VALID_ACCOUNT_NUMBER = "358507671"
+    const val VALID_CHECK_DIGIT = "8"
+
+    const val VALID_ACCOUNT_NUMBER_REMAINDER_ONE = "358507670"
+    const val VALID_CHECK_DIGIT_REMAINDER_ONE = "6"
+
+    const val VALID_ACCOUNT_NUMBER_REMAINDER_ZERO = "000011000"
+    const val VALID_CHECK_DIGIT_REMAINDER_ZERO = "0"
+
+    const val VALID_AGENCY_NUMBER_TWO_DIGITS = "11"
+    const val VALID_ACCOUNT_NUMBER_TWO_DIGITS = "11000"
+    const val VALID_CHECK_DIGIT_NUMBER_TWO_DIGITS = "0"
+
+    const val INVALID_LENGTH_AGENCY_NUMBER = "00000"
+    const val INVALID_LENGTH_ACCOUNT_NUMBER = "0000000000000000"
+    const val INVALID_CHECK_DIGIT = "9"
+    const val INVALID_EMPTY_CHECK_DIGIT = ""
+}
