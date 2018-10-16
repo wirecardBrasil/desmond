@@ -7,8 +7,8 @@ import br.com.wirecard.desmond.bank.exception.InvalidCheckDigitException
 import com.winterbe.expekt.should
 import org.junit.Test
 
-import br.com.wirecard.desmond.bank.factory.SantanderObjectFactory as objectFactory
-import br.com.wirecard.desmond.bank.validator.bank.SantanderBankAccountValidator as validator
+import br.com.wirecard.desmond.bank.factory.CEFObjectFactory as objectFactory
+import br.com.wirecard.desmond.bank.validator.bank.CEFBankAccountValidator as validator
 
 class CEFBankAccountValidatorTest {
     @Test
@@ -16,7 +16,7 @@ class CEFBankAccountValidatorTest {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
         val validAccountNumber = objectFactory.VALID_ACCOUNT_NUMBER
         val validCheckDigit = objectFactory.VALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.Santander, validAgencyNumber, validCheckDigit, validAccountNumber, validCheckDigit)
+        val bankAccount = BankAccount(Bank.CEF, validAgencyNumber, validCheckDigit, validAccountNumber, validCheckDigit)
         validator.validate(bankAccount).should.be.`true`
     }
 
@@ -25,7 +25,7 @@ class CEFBankAccountValidatorTest {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
         val validAccountNumber = objectFactory.VALID_ACCOUNT_NUMBER
         val invalidAccountCheckDigit = objectFactory.INVALID_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.Santander, validAgencyNumber, validAccountNumber, invalidAccountCheckDigit)
+        val bankAccount = BankAccount(Bank.CEF, validAgencyNumber, validAccountNumber, invalidAccountCheckDigit)
         validator.validate(bankAccount)
     }
 
@@ -34,7 +34,7 @@ class CEFBankAccountValidatorTest {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
         val validAccountNumber = objectFactory.VALID_ACCOUNT_NUMBER
         val invalidAccountCheckDigit = objectFactory.INVALID_EMPTY_CHECK_DIGIT
-        val bankAccount = BankAccount(Bank.BancoDoBrasil, validAgencyNumber, validAccountNumber, invalidAccountCheckDigit)
+        val bankAccount = BankAccount(Bank.CEF, validAgencyNumber, validAccountNumber, invalidAccountCheckDigit)
         validator.validate(bankAccount)
     }
 }
