@@ -33,7 +33,7 @@ class BanrisulBankAccountValidatorTest {
     fun shouldThrowCorrectExceptionWhenAgencyCheckDigitIsEmpty() {
         val validAgencyNumber = objectFactory.VALID_AGENCY_NUMBER
         val validAccountNumber = objectFactory.VALID_ACCOUNT_NUMBER
-        val invalidAccountCheckDigit = objectFactory.INVALID_CHECK_DIGIT
+        val invalidAccountCheckDigit = objectFactory.INVALID_EMPTY_CHECK_DIGIT
         val bankAccount = BankAccount(Bank.Banrisul, validAgencyNumber, validAccountNumber, invalidAccountCheckDigit)
         validator.validate(bankAccount)
     }
